@@ -1,0 +1,77 @@
+{
+  "studentId": "STU2026001",
+  "citizenId": "CIT001",
+  "fullName": "Rahul Suresh Sharma",
+  "gender": "Male",
+  "dob": "2004-05-14",
+  "mobile": "+91 98765 43210",
+  "email": "rahul.sharma@example.edu.in",
+  "profileCompletion": 85,
+  "address": {
+    "state": "Maharashtra",
+    "district": "Pune",
+    "cityVillage": "Haveli, Pune",
+    "pincode": "411041",
+    "fullAddress": "Flat 302, Sai Residency, Vadgaon Budruk, Pune, Maharashtra - 411041"
+  },
+  "academic": {
+    "institute": "Government College of Engineering and Research, Pune",
+    "university": "Savitribai Phule Pune University",
+    "course": "B.Tech / B.E.",
+    "branch": "Computer Science and Engineering",
+    "year": "3rd Year",
+    "semester": "5th Semester",
+    "enrollmentNumber": "EN2022098412",
+    "percentage": 82.5,
+    "cgpa": "8.65"
+  },
+  "family": {
+    "guardianName": "Suresh Balkrishna Sharma",
+    "familySize": 4,
+    "guardianOccupation": "Farmer & Small Shopkeeper"
+  },
+  "documents": [
+    {
+      "id": "DOC-01",
+      "type": "Identity Proof",
+      "name": "Aadhaar_Card_Masked.pdf",
+      "size": "1.2 MB",
+      "uploadDate": "2026-08-15",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "DOC-02",
+      "type": "Marksheet",
+      "name": "Diploma_Sem4_Marksheet.pdf",
+      "size": "2.4 MB",
+      "uploadDate": "2026-08-15",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "DOC-03",
+      "type": "Bonafide Certificate",
+      "name": "College_Bonafide_2026_27.pdf",
+      "size": "850 KB",
+      "uploadDate": "2026-08-20",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "DOC-04",
+      "type": "Required Certificate",
+      "name": "Domicile_Certificate_MH.pdf",
+      "size": "1.1 MB",
+      "uploadDate": "2026-08-20",
+      "status": "VERIFIED"
+    }
+  ],
+  "incomeVerification": {
+    "status": "VERIFIED",
+    "requestId": "REQ1001",
+    "amount": 250000,
+    "currency": "INR",
+    "sourceDepartment": "Revenue Department",
+    "verifiedAt": "2026-08-30T10:15:24Z",
+    "certificateNo": "REV/INC/2026/09841",
+    "interoperabilityGateway": "MahaSetu v2.4"
+  }
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "id": "APP1001",
+    "scholarshipId": "SCH-2026-001",
+    "scholarshipName": "Post-Matric National Merit Scholarship for Higher Education",
+    "studentId": "STU2026001",
+    "studentName": "Rahul Suresh Sharma",
+    "citizenId": "CIT001",
+    "course": "B.Tech / B.E. (Computer Science)",
+    "institute": "Government College of Engineering, Pune",
+    "appliedDate": "2026-08-30",
+    "status": "UNDER_REVIEW",
+    "amount": 50000,
+    "incomeVerification": {
+      "status": "VERIFIED",
+      "amount": 250000,
+      "currency": "INR",
+      "source": "Revenue Department",
+      "requestId": "REQ1001",
+      "verifiedAt": "30 August 2026",
+      "isCompliant": true
+    },
+    "documentsStatus": "VERIFIED",
+    "academicStatus": "VERIFIED",
+    "officerReviewStatus": "PENDING",
+    "timeline": [
+      {
+        "step": "Application Submitted",
+        "date": "30 Aug 2026, 10:14 AM",
+        "status": "COMPLETED",
+        "description": "Application submitted by student with digital signature."
+      },
+      {
+        "step": "Documents Verified",
+        "date": "30 Aug 2026, 10:15 AM",
+        "status": "COMPLETED",
+        "description": "Identity proof, marksheet, and bonafide validated."
+      },
+      {
+        "step": "Income Verification",
+        "date": "30 Aug 2026, 10:15 AM",
+        "status": "COMPLETED",
+        "description": "Real-time verification completed with Revenue Dept (REQ1001). Income ₹2,50,000 within limit."
+      },
+      {
+        "step": "Academic Verification",
+        "date": "30 Aug 2026, 11:30 AM",
+        "status": "COMPLETED",
+        "description": "University enrollment and CGPA (8.65) verified against college database."
+      },
+      {
+        "step": "Officer Review",
+        "date": "In Progress",
+        "status": "CURRENT",
+        "description": "Assigned to Education Officer Dr. V. K. Patil for final approval."
+      },
+      {
+        "step": "Final Decision & Disbursement",
+        "date": "Pending Review",
+        "status": "PENDING",
+        "description": "Scholarship grant disbursement to student bank account."
+      }
+    ]
+  },
+  {
+    "id": "APP1002",
+    "scholarshipId": "SCH-2026-002",
+    "scholarshipName": "State STEM Excellence Scholarship for Engineering & Technology",
+    "studentId": "STU2026002",
+    "studentName": "Priya Rajesh Deshmukh",
+    "citizenId": "CIT002",
+    "course": "B.Tech / B.E. (Mechanical Engineering)",
+    "institute": "College of Engineering Pune (COEP)",
+    "appliedDate": "2026-08-28",
+    "status": "APPROVED",
+    "amount": 60000,
+    "incomeVerification": {
+      "status": "VERIFIED",
+      "amount": 180000,
+      "currency": "INR",
+      "source": "Revenue Department",
+      "requestId": "REQ1000",
+      "verifiedAt": "28 August 2026",
+      "isCompliant": true
+    },
+    "documentsStatus": "VERIFIED",
+    "academicStatus": "VERIFIED",
+    "officerReviewStatus": "APPROVED",
+    "timeline": [
+      {
+        "step": "Application Submitted",
+        "date": "28 Aug 2026, 09:10 AM",
+        "status": "COMPLETED",
+        "description": "Application submitted successfully."
+      },
+      {
+        "step": "Documents Verified",
+        "date": "28 Aug 2026, 09:12 AM",
+        "status": "COMPLETED",
+        "description": "All submitted certificates verified."
+      },
+      {
+        "step": "Income Verification",
+        "date": "28 Aug 2026, 09:15 AM",
+        "status": "COMPLETED",
+        "description": "Revenue Dept verified income ₹1,80,000 (REQ1000)."
+      },
+      {
+        "step": "Academic Verification",
+        "date": "28 Aug 2026, 02:00 PM",
+        "status": "COMPLETED",
+        "description": "Eligible score 88.4% verified."
+      },
+      {
+        "step": "Officer Review",
+        "date": "29 Aug 2026, 04:20 PM",
+        "status": "COMPLETED",
+        "description": "Approved by Officer Dr. V. K. Patil."
+      },
+      {
+        "step": "Final Decision & Disbursement",
+        "date": "30 Aug 2026, 10:00 AM",
+        "status": "COMPLETED",
+        "description": "Grant sanction order issued: GO-MH-EDU-2026-891."
+      }
+    ]
+  },
+  {
+    "id": "APP1003",
+    "scholarshipId": "SCH-2026-004",
+    "scholarshipName": "Minority Community Higher Education Support Grant",
+    "studentId": "STU2026003",
+    "studentName": "Aamir Farooq Khan",
+    "citizenId": "CIT003",
+    "course": "B.Sc (Microbiology)",
+    "institute": "Fergusson College, Pune",
+    "appliedDate": "2026-08-29",
+    "status": "VERIFICATION_PENDING",
+    "amount": 30000,
+    "incomeVerification": {
+      "status": "NOT_VERIFIED",
+      "amount": null,
+      "currency": "INR",
+      "source": "Pending Citizen Consent",
+      "requestId": "REQ1003",
+      "verifiedAt": null,
+      "isCompliant": false
+    },
+    "documentsStatus": "VERIFIED",
+    "academicStatus": "VERIFIED",
+    "officerReviewStatus": "PENDING",
+    "timeline": [
+      {
+        "step": "Application Submitted",
+        "date": "29 Aug 2026, 03:40 PM",
+        "status": "COMPLETED",
+        "description": "Application submitted."
+      },
+      {
+        "step": "Documents Verified",
+        "date": "29 Aug 2026, 03:42 PM",
+        "status": "COMPLETED",
+        "description": "Documents valid."
+      },
+      {
+        "step": "Income Verification",
+        "date": "Pending Consent",
+        "status": "CURRENT",
+        "description": "Student consent needed to trigger Revenue Dept check."
+      },
+      {
+        "step": "Academic Verification",
+        "date": "Pending",
+        "status": "PENDING",
+        "description": "Waiting for income verification."
+      },
+      {
+        "step": "Officer Review",
+        "date": "Pending",
+        "status": "PENDING",
+        "description": "Pending review."
+      },
+      {
+        "step": "Final Decision & Disbursement",
+        "date": "Pending",
+        "status": "PENDING",
+        "description": "Pending decision."
+      }
+    ]
+  }
+]

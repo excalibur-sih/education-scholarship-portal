@@ -1,0 +1,21 @@
+{
+  "requestId": "REQ1001",
+  "citizenId": "CIT001",
+  "verificationStatus": "VERIFIED",
+  "sourceDepartment": "Revenue Department",
+  "verifiedAt": "2026-08-30T10:15:24Z",
+  "income": {
+    "amount": 250000,
+    "currency": "INR",
+    "assessmentYear": "2025-2026",
+    "certificateNumber": "REV/INC/2026/09841"
+  },
+  "dataMinimizationApplied": true,
+  "redactedFields": [
+    "Internal_Tax_Details.PAN_Masked",
+    "Internal_Tax_Details.Tax_Exemption_Slab",
+    "Internal_Tax_Details.Property_Holding_Acres",
+    "Internal_Tax_Details.Bank_Account_Ref"
+  ],
+  "interoperabilityGateway": "MahaSetu v2.4"
+}

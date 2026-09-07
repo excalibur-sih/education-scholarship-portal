@@ -1,0 +1,19 @@
+{
+  "requestId": "REQ1001",
+  "requester": {
+    "department": "Education Department",
+    "portal": "Education Scholarship Portal",
+    "systemCode": "EDU_SCHOLARSHIP_SYS",
+    "officerId": "SYS_AUTO_VERIFY"
+  },
+  "citizenId": "CIT001",
+  "studentId": "STU2026001",
+  "applicationId": "APP1001",
+  "requiredData": [
+    "annualIncome"
+  ],
+  "purpose": "Scholarship Eligibility Verification",
+  "consentToken": "CST_982348_2026_VERIFIED",
+  "consentTimestamp": "2026-08-30T10:15:00Z",
+  "timestamp": "2026-08-30T10:15:22Z"
+}

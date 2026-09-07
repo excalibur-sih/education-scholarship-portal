@@ -1,0 +1,42 @@
+[
+  {
+    "id": "NOTIF-01",
+    "title": "Income Verification Required",
+    "message": "Annual family income verification through MahaSetu is pending for Application APP1001.",
+    "type": "WARNING",
+    "timestamp": "10 minutes ago",
+    "date": "2026-08-30T10:14:00Z",
+    "read": false,
+    "link": "/student/income-verification"
+  },
+  {
+    "id": "NOTIF-02",
+    "title": "Income Successfully Verified",
+    "message": "Revenue Department verified your annual income as ₹2,50,000 via MahaSetu Gateway (REQ1001).",
+    "type": "SUCCESS",
+    "timestamp": "5 minutes ago",
+    "date": "2026-08-30T10:15:30Z",
+    "read": false,
+    "link": "/student/verification-result"
+  },
+  {
+    "id": "NOTIF-03",
+    "title": "Application Submitted",
+    "message": "Your scholarship application APP1001 has been forwarded for Education Officer review.",
+    "type": "INFO",
+    "timestamp": "2 hours ago",
+    "date": "2026-08-30T09:00:00Z",
+    "read": true,
+    "link": "/student/applications/APP1001"
+  },
+  {
+    "id": "NOTIF-04",
+    "title": "Scholarship Deadline Approaching",
+    "message": "The Post-Matric National Merit Scholarship applications close on 15 Oct 2026.",
+    "type": "ALERT",
+    "timestamp": "1 day ago",
+    "date": "2026-08-29T14:30:00Z",
+    "read": true,
+    "link": "/scholarships/SCH-2026-001"
+  }
+]

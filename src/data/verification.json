@@ -1,0 +1,141 @@
+{
+  "activeRequests": [
+    {
+      "requestId": "REQ1001",
+      "requester": "Education Department",
+      "portal": "Education Scholarship Portal",
+      "dataRequested": "Annual Family Income",
+      "purpose": "Scholarship Eligibility Verification",
+      "provider": "Revenue Department",
+      "date": "30 August 2026",
+      "timestamp": "2026-08-30T10:15:22Z",
+      "expiry": "30 September 2026",
+      "status": "SUCCESS",
+      "consentStatus": "GRANTED",
+      "result": {
+        "amount": 250000,
+        "currency": "INR",
+        "verified": true,
+        "certificateNo": "REV/INC/2026/09841",
+        "minimizationApplied": true
+      }
+    },
+    {
+      "requestId": "REQ1000",
+      "requester": "Education Department",
+      "portal": "Education Scholarship Portal",
+      "dataRequested": "Annual Family Income",
+      "purpose": "STEM Scholarship Scheme Verification",
+      "provider": "Revenue Department",
+      "date": "28 August 2026",
+      "timestamp": "2026-08-28T09:15:00Z",
+      "expiry": "28 September 2026",
+      "status": "SUCCESS",
+      "consentStatus": "GRANTED",
+      "result": {
+        "amount": 180000,
+        "currency": "INR",
+        "verified": true,
+        "certificateNo": "REV/INC/2026/08812",
+        "minimizationApplied": true
+      }
+    },
+    {
+      "requestId": "REQ0989",
+      "requester": "Higher Education Dept",
+      "portal": "State Free Laptop Scheme",
+      "dataRequested": "Caste & Domicile Record",
+      "purpose": "Welfare Scheme Verification",
+      "provider": "Social Welfare Department",
+      "date": "15 July 2026",
+      "timestamp": "2026-07-15T14:20:00Z",
+      "expiry": "15 August 2026",
+      "status": "SUCCESS",
+      "consentStatus": "GRANTED",
+      "result": {
+        "verified": true,
+        "minimizationApplied": true
+      }
+    }
+  ],
+  "schemaMappings": [
+    {
+      "id": "MAP-01",
+      "educationField": "citizenId",
+      "educationType": "string (JSON)",
+      "direction": "⇄",
+      "revenueField": "Citizen_ID",
+      "revenueType": "xs:string (XML)",
+      "description": "Unique Citizen Identifier used for cross-department resolution"
+    },
+    {
+      "id": "MAP-02",
+      "educationField": "annualIncome",
+      "educationType": "number (JSON)",
+      "direction": "⇄",
+      "revenueField": "Yearly_Income",
+      "revenueType": "xs:decimal (XML)",
+      "description": "Total assessed family income in INR"
+    },
+    {
+      "id": "MAP-03",
+      "educationField": "verificationStatus",
+      "educationType": "string (JSON)",
+      "direction": "⇄",
+      "revenueField": "Verification",
+      "revenueType": "xs:string (XML)",
+      "description": "Authority verification state ('VERIFIED' / 'REJECTED')"
+    },
+    {
+      "id": "MAP-04",
+      "educationField": "currency",
+      "educationType": "string (JSON)",
+      "direction": "⇄",
+      "revenueField": "Currency",
+      "revenueType": "xs:string (XML)",
+      "description": "Monetary currency code ('INR')"
+    }
+  ],
+  "dataMinimizationRules": [
+    {
+      "field": "Citizen_Name",
+      "category": "Basic Profile",
+      "availableAtSource": true,
+      "requestedByEducation": false,
+      "transferred": false,
+      "reason": "Not requested by Education. Already identified by Citizen ID."
+    },
+    {
+      "field": "Yearly_Income",
+      "category": "Financial Assessment",
+      "availableAtSource": true,
+      "requestedByEducation": true,
+      "transferred": true,
+      "reason": "Explicitly requested for scholarship income ceiling check."
+    },
+    {
+      "field": "Property_Holding_Acres",
+      "category": "Asset Records",
+      "availableAtSource": true,
+      "requestedByEducation": false,
+      "transferred": false,
+      "reason": "REDACTED: Land holdings are confidential and irrelevant to this scheme."
+    },
+    {
+      "field": "PAN_Masked & Tax Details",
+      "category": "Tax Filings",
+      "availableAtSource": true,
+      "requestedByEducation": false,
+      "transferred": false,
+      "reason": "REDACTED: Tax brackets exceed minimum required data scope."
+    },
+    {
+      "field": "Bank_Account_Ref",
+      "category": "Banking",
+      "availableAtSource": true,
+      "requestedByEducation": false,
+      "transferred": false,
+      "reason": "REDACTED: Revenue bank accounts must not be exposed."
+    }
+  ]
+}

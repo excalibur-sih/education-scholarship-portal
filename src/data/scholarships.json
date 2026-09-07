@@ -1,0 +1,117 @@
+[
+  {
+    "id": "SCH-2026-001",
+    "name": "Post-Matric National Merit Scholarship for Higher Education",
+    "category": "Merit-cum-Means",
+    "description": "Financial assistance for meritorious undergraduate and postgraduate students from economically disadvantaged families to pursue higher professional studies.",
+    "objective": "To provide financial assistance to meritorious students from low-income families to meet a part of their day-to-day expenses while pursuing higher education.",
+    "academicYear": "2026-2027",
+    "eligibility": "Class 12 / Diploma passed with minimum 75% marks. Family income must not exceed ₹2,50,000 per annum.",
+    "minPercentage": 75,
+    "incomeLimit": 250000,
+    "eligibleCourses": ["B.Tech / B.E.", "B.Sc", "B.Com", "MBBS", "B.A."],
+    "eligibleYears": ["1st Year", "2nd Year", "3rd Year", "4th Year"],
+    "deadline": "2026-10-15",
+    "status": "OPEN",
+    "benefits": "₹50,000 per annum + Tuition Fee waiver up to ₹25,000",
+    "amount": 50000,
+    "requiredDocuments": [
+      "Class 10 & 12 Marksheets",
+      "Current Year College Admission Bonafide",
+      "Identity Proof (Aadhaar/College ID)",
+      "Verified Income from Revenue Dept (via MahaSetu)"
+    ]
+  },
+  {
+    "id": "SCH-2026-002",
+    "name": "State STEM Excellence Scholarship for Engineering & Technology",
+    "category": "STEM Special",
+    "description": "Special government scholarship for students enrolled in accredited Engineering, Polytechnic, and Technology degree programs across recognized state institutions.",
+    "objective": "To encourage talent in Science, Technology, Engineering and Mathematics (STEM) domains.",
+    "academicYear": "2026-2027",
+    "eligibility": "Minimum 65% aggregate in qualifying examination with Physics/Maths/Chemistry. Family annual income below ₹3,00,000.",
+    "minPercentage": 65,
+    "incomeLimit": 300000,
+    "eligibleCourses": ["B.Tech / B.E.", "M.Tech", "Polytechnic Diploma", "BCA / MCA"],
+    "eligibleYears": ["1st Year", "2nd Year", "3rd Year", "4th Year"],
+    "deadline": "2026-10-31",
+    "status": "OPEN",
+    "benefits": "₹60,000 per annum towards academic & laboratory fees",
+    "amount": 60000,
+    "requiredDocuments": [
+      "Semester Marksheets",
+      "College Bonafide Certificate",
+      "Identity Proof",
+      "Verified Income (via MahaSetu)"
+    ]
+  },
+  {
+    "id": "SCH-2026-003",
+    "name": "Pragati Girl Child Technical Scholarship Scheme",
+    "category": "Girl Child Empowerment",
+    "description": "Empowering young women pursuing degree and diploma level technical education in AICTE approved institutions.",
+    "objective": "To support the advancement of girls pursuing technical education as a pathway to economic independence.",
+    "academicYear": "2026-2027",
+    "eligibility": "Only female students admitted in 1st year of Degree/Diploma. Family income below ₹3,50,000 per annum.",
+    "minPercentage": 60,
+    "incomeLimit": 350000,
+    "eligibleCourses": ["B.Tech / B.E.", "B.Pharm", "B.Arch", "Polytechnic Diploma"],
+    "eligibleYears": ["1st Year", "2nd Year"],
+    "deadline": "2026-11-15",
+    "status": "OPEN",
+    "benefits": "₹50,000 per annum + ₹10,000 laptop allowance",
+    "amount": 60000,
+    "requiredDocuments": [
+      "Proof of Admission",
+      "Previous Exam Marksheet",
+      "Identity Proof",
+      "Verified Income (via MahaSetu)"
+    ]
+  },
+  {
+    "id": "SCH-2026-004",
+    "name": "Minority Community Higher Education Support Grant",
+    "category": "Community Support",
+    "description": "Support grant for students belonging to notified minority communities studying in recognized universities.",
+    "objective": "To augment opportunities for higher education among notified minority groups.",
+    "academicYear": "2026-2027",
+    "eligibility": "Minimum 50% marks in previous final exam. Annual family income below ₹2,00,000.",
+    "minPercentage": 50,
+    "incomeLimit": 200000,
+    "eligibleCourses": ["All Undergraduate & Postgraduate Courses"],
+    "eligibleYears": ["All Years"],
+    "deadline": "2026-09-30",
+    "status": "CLOSING_SOON",
+    "benefits": "₹30,000 per annum Maintenance Allowance",
+    "amount": 30000,
+    "requiredDocuments": [
+      "Community Self-Declaration",
+      "Marksheet",
+      "Bonafide",
+      "Verified Income (via MahaSetu)"
+    ]
+  },
+  {
+    "id": "SCH-2026-005",
+    "name": "Divyangjan Special Scholarship for Persons with Disabilities",
+    "category": "Inclusion & Accessibility",
+    "description": "Comprehensive financial support for differently-abled students pursuing professional, technical, or general degree courses.",
+    "objective": "To ensure equal academic opportunities and assist with accessibility and study aids.",
+    "academicYear": "2026-2027",
+    "eligibility": "Disability percentage 40% or above. Minimum 45% in previous examination. Income limit ₹4,00,000.",
+    "minPercentage": 45,
+    "incomeLimit": 400000,
+    "eligibleCourses": ["All Graduate & Postgraduate Programs"],
+    "eligibleYears": ["All Years"],
+    "deadline": "2026-12-31",
+    "status": "OPEN",
+    "benefits": "₹45,000 per annum + Assistive Device Subsidy",
+    "amount": 45000,
+    "requiredDocuments": [
+      "Disability Certificate (UDID)",
+      "Academic Marksheet",
+      "Bonafide",
+      "Verified Income (via MahaSetu)"
+    ]
+  }
+]

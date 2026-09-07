@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample Revenue Department XML Response (Demonstration Data) -->
+<IncomeResponse xmlns:rev="https://revenue.gov.in/schemas/v2">
+    <Header>
+        <Source_Department>Revenue and Land Reforms Department</Source_Department>
+        <Gateway_Transaction_ID>TXN_MAHASETU_90823412</Gateway_Transaction_ID>
+        <Timestamp>2026-08-30T10:15:23Z</Timestamp>
+    </Header>
+    <Citizen_Profile>
+        <Citizen_ID>CIT001</Citizen_ID>
+        <Citizen_Name>Rahul Sharma</Citizen_Name>
+        <Father_Name>Suresh Sharma</Father_Name>
+        <Permanent_District>Pune</Permanent_District>
+        <State>Maharashtra</State>
+    </Citizen_Profile>
+    <Income_Assessment>
+        <Assessment_Year>2025-2026</Assessment_Year>
+        <Yearly_Income>250000</Yearly_Income>
+        <Currency>INR</Currency>
+        <Income_Source>Agriculture &amp; Small Business</Income_Source>
+        <Verification>VERIFIED</Verification>
+        <Certificate_No>REV/INC/2026/09841</Certificate_No>
+        <Issuing_Tehsil>Haveli, Pune</Issuing_Tehsil>
+    </Income_Assessment>
+    <!-- The following non-requested fields are MINIMIZED/REDACTED by MahaSetu before sending to Education -->
+    <Internal_Tax_Details>
+        <PAN_Masked>XXXXXX123K</PAN_Masked>
+        <Tax_Exemption_Slab>Below Taxable Limit</Tax_Exemption_Slab>
+        <Property_Holding_Acres>1.5</Property_Holding_Acres>
+        <Bank_Account_Ref>SBIN0004128_XXXX</Bank_Account_Ref>
+    </Internal_Tax_Details>
+</IncomeResponse>
