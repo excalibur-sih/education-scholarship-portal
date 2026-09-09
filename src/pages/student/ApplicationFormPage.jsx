@@ -35,6 +35,7 @@ export const ApplicationFormPage = () => {
 
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
+  const [isSanchalakLoading, setIsSanchalakLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     // ================= STEP 1 =================
@@ -255,6 +256,99 @@ export const ApplicationFormPage = () => {
   // ============================================================
   // VALIDATION
   // ============================================================
+
+
+  // ============================================================
+  // SANCHALAK AUTO-FILL INTEGRATION
+  // ============================================================
+  const handleSanchalakAutoFill = async () => {
+    try {
+      setIsSanchalakLoading(true);
+      const studentId = formData.studentId || user?.id;
+      
+      const response = await fetch(`${API_BASE_URL}/api/sanchalak/autofill`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId })
+      });
+      
+      const result = await response.json();
+      
+      if (!response.ok || !result.success) {
+        addNotification({
+          title: 'Sanchalak Auto-Fill Failed',
+          message: result.message || 'Could not fetch data.',
+          type: 'error'
+        });
+        return;
+      }
+      
+      const { data } = result;
+      
+      // Map extracted canonical data to formData, respecting partial/missing fields
+      setFormData(prev => ({
+        ...prev,
+        fullName: data.applicantName || prev.fullName,
+        dob: data.applicantDob || prev.dob,
+        gender: data.applicantGender || prev.gender,
+        mobile: data.applicantMobile || prev.mobile,
+        email: data.applicantEmail || prev.email,
+        state: data.applicantAddress?.state || prev.state,
+        district: data.applicantAddress?.district || prev.district,
+        cityVillage: data.applicantAddress?.cityVillage || prev.cityVillage,
+        pincode: data.applicantAddress?.pincode || prev.pincode,
+        institute: data.institution || prev.institute,
+        university: data.university || prev.university,
+        course: data.course || prev.course,
+        branch: data.branch || prev.branch,
+        year: data.currentYear || prev.year,
+        semester: data.semester || prev.semester,
+        enrollmentNumber: data.enrollmentNumber || prev.enrollmentNumber,
+        percentage: data.academicPercentage || prev.percentage,
+        cgpa: data.cgpa || prev.cgpa,
+        incomeVerified: data.isEligible ? true : prev.incomeVerified,
+        verifiedIncomeAmount: data.annualIncome || prev.verifiedIncomeAmount,
+        requestId: data.requestId || 'REQ-SCH-SANCHALAK'
+      }));
+      
+      
+        const availability = data.availability || { status: 'COMPLETED' };
+        
+        if (availability.status === 'COMPLETED') {
+          addNotification({
+            title: 'Sanchalak Integration Success',
+            message: 'Information fetched successfully. Your available details have been filled.',
+            type: 'SUCCESS'
+          });
+          setCurrentStep(steps.length - 1);
+        } else {
+          const missingMsg = availability.missing && availability.missing.length > 0 
+            ? ' Missing domains: ' + availability.missing.map(m => m.domain).join(', ') + '.'
+            : '';
+            
+          addNotification({
+            title: availability.status === 'FAILED' ? 'Information Missing' : 'Partial Data Fetched',
+            message: 'Available information has been filled. Some details could not be retrieved and need your input.' + missingMsg,
+            type: 'WARNING'
+          });
+        }
+
+        // Trigger safe auto-scroll after React paints
+        setTimeout(() => {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 100);
+
+      
+    } catch (error) {
+      addNotification({
+        title: 'Error',
+        message: error.message,
+        type: 'error'
+      });
+    } finally {
+      setIsSanchalakLoading(false);
+    }
+  };
 
   const validateStep = () => {
     const newErrors = {};
@@ -637,15 +731,25 @@ export const ApplicationFormPage = () => {
         {currentStep === 0 && (
           <div className="space-y-5">
 
-            <div className="border-b border-slate-100 pb-3">
-              <h2 className="text-base font-bold text-slate-900 uppercase tracking-wider text-gov-primary">
-                Step 1: Personal Information
-              </h2>
-
-              <p className="text-xs text-slate-500">
-                Applicant identity details.
-              </p>
-            </div>
+            
+              <div className="border-b border-slate-100 pb-3 flex justify-between items-center">
+                <div>
+                  <h2 className="text-base font-bold text-slate-900 uppercase tracking-wider text-gov-primary">
+                    Step 1: Personal Information
+                  </h2>
+                  <p className="text-xs text-slate-500">
+                    Applicant identity details.
+                  </p>
+                </div>
+                <Button 
+                  variant="primary" 
+                  onClick={handleSanchalakAutoFill}
+                  disabled={isSanchalakLoading}
+                  icon={ShieldCheck}
+                >
+                  {isSanchalakLoading ? 'Fetching from Sanchalak...' : 'Fill via Sanchalak'}
+                </Button>
+              </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 

@@ -125,34 +125,53 @@ export const NotificationBell = () => {
 export const ToastContainer = () => {
   const { toasts, removeToast } = useNotifications();
 
+  const getToastStyle = (type) => {
+    const t = (type || '').toUpperCase();
+    if (t === 'SUCCESS') return 'bg-emerald-600 border-emerald-700 text-white';
+    if (t === 'ERROR' || t === 'ALERT') return 'bg-rose-600 border-rose-700 text-white';
+    if (t === 'WARNING') return 'bg-amber-500 border-amber-600 text-white';
+    return 'bg-slate-900 border-slate-700 text-white';
+  };
+
+  const getIconColor = (type) => {
+    const t = (type || '').toUpperCase();
+    if (t === 'SUCCESS') return 'text-emerald-100';
+    if (t === 'ERROR' || t === 'ALERT') return 'text-rose-100';
+    if (t === 'WARNING') return 'text-amber-100';
+    return 'text-blue-400';
+  };
+
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none">
-      {toasts.map((t) => (
-        <div
-          key={t.id}
-          className="pointer-events-auto bg-slate-900 text-white rounded-lg p-3.5 shadow-xl border border-slate-700 flex items-start gap-3 animate-in slide-in-from-bottom-5 duration-200"
-        >
-          <div className="mt-0.5 shrink-0">
-            {t.type === 'SUCCESS' ? (
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            ) : t.type === 'ALERT' || t.type === 'WARNING' ? (
-              <AlertTriangle className="w-4 h-4 text-amber-400" />
-            ) : (
-              <Info className="w-4 h-4 text-blue-400" />
-            )}
-          </div>
-          <div className="flex-1">
-            <h5 className="text-xs font-bold text-slate-100">{t.title}</h5>
-            <p className="text-[11px] text-slate-300 mt-0.5 leading-snug">{t.message}</p>
-          </div>
-          <button
-            onClick={() => removeToast(t.id)}
-            className="text-slate-400 hover:text-white p-1 rounded"
+    <div className="fixed top-6 right-6 z-50 flex flex-col gap-3 max-w-md w-full pointer-events-none">
+      {toasts.map((t) => {
+        const typeUpper = (t.type || '').toUpperCase();
+        return (
+          <div
+            key={t.id}
+            className={`pointer-events-auto rounded-xl p-5 shadow-2xl border flex items-start gap-4 animate-in slide-in-from-top-5 duration-200 ${getToastStyle(t.type)}`}
           >
-            <X className="w-3.5 h-3.5" />
-          </button>
-        </div>
-      ))}
+            <div className="mt-0.5 shrink-0">
+              {typeUpper === 'SUCCESS' ? (
+                <CheckCircle2 className={`w-6 h-6 ${getIconColor(t.type)}`} />
+              ) : typeUpper === 'ALERT' || typeUpper === 'ERROR' || typeUpper === 'WARNING' ? (
+                <AlertTriangle className={`w-6 h-6 ${getIconColor(t.type)}`} />
+              ) : (
+                <Info className={`w-6 h-6 ${getIconColor(t.type)}`} />
+              )}
+            </div>
+            <div className="flex-1">
+              <h5 className="text-base font-bold text-white">{t.title}</h5>
+              <p className="text-sm text-slate-100 mt-1 leading-relaxed">{t.message}</p>
+            </div>
+            <button
+              onClick={() => removeToast(t.id)}
+              className="text-white/70 hover:text-white p-1 rounded transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 };

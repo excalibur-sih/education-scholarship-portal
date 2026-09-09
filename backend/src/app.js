@@ -2843,7 +2843,80 @@ app.put('/api/documents/:id/verify', async (req, res) => {
   }
 });
 
+
+// =====================================================
+// SANCHALAK INTEGRATION ENDPOINT
+// =====================================================
+app.post('/api/sanchalak/autofill', async (req, res) => {
+  try {
+    const { studentId } = req.body;
+    if (!studentId) {
+      return res.status(400).json({ success: false, message: 'Student ID required' });
+    }
+
+    // Derive and validate citizen reference from DB
+    let citizenReference = 'CIT001'; // Default mock citizen ID for dummy portal
+    
+    try {
+      const studentResult = await pool.query(
+        `SELECT student_id, citizen_id FROM students WHERE student_id = $1 OR CAST(id AS TEXT) = $1`,
+        [studentId]
+      );
+
+      if (studentResult.rows.length > 0 && studentResult.rows[0].citizen_id) {
+        citizenReference = studentResult.rows[0].citizen_id;
+      } else {
+        console.warn('Student not found in Scholarship DB, using fallback citizen ID');
+      }
+    } catch (dbError) {
+      console.warn('Database error when fetching student (table might not exist). Using fallback citizen ID.', dbError.message);
+    }
+
+    // Secure M2M Call to Sanchalak
+    const SANCHALAK_URL = 'http://localhost:4000/api/v1/interoperability/requests';
+    const SANCHALAK_API_KEY = 'sih-development-api-key-123'; 
+
+    const payload = {
+      requestId: 'REQ-SCH-' + Date.now(),
+      requestingSystem: { systemId: 'MOCK_SCHOLARSHIP_PORTAL' },
+      service: { serviceId: 'SCHOLARSHIP_ELIGIBILITY', version: '1.0' },
+      subject: { reference: citizenReference },
+      response: { format: 'JSON', schemaVersion: '1.0' }
+    };
+    
+    const sanchalakResponse = await globalThis.fetch(SANCHALAK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': SANCHALAK_API_KEY
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const sanchalakData = await sanchalakResponse.json();
+
+    if (!sanchalakResponse.ok) {
+      return res.status(sanchalakResponse.status).json({
+        success: false,
+        message: 'Sanchalak integration failed',
+        error: sanchalakData
+      });
+    }
+
+    // Return the mapped response strictly to frontend
+    res.json({
+      success: true,
+      data: sanchalakData.data
+    });
+
+  } catch (error) {
+    console.error('Sanchalak proxy error:', error);
+    res.status(500).json({ success: false, message: 'Internal server error', error: error.message });
+  }
+});
+
 // 6. Student Notifications by ID parameter (e.g. /api/notifications/STU2026001 or numeric id)
+
 app.get('/api/notifications/:studentId', async (req, res) => {
   try {
     const { studentId } = req.params;
